@@ -1,0 +1,9 @@
+h1 = @post.title
+
+= @post.content 
+
+= @post.user.name
+
+= link_to 'Comment op deze post', new_comment_path(@post)
+
+= render @post.comments

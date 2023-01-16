@@ -1,0 +1,9 @@
+p
+= post.title
+br
+= post.content
+br
+= post.user.name
+
+= link_to 'Bekijk deze post', "/posts/#{post.id}"
+/ <a href="/articles/<%= article.id %>">Bekijk deze post</a>
