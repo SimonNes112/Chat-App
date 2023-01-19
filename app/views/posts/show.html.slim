@@ -3,7 +3,7 @@ h1 = @post.title
 = @post.content 
 
 = @post.user.name
-
-= link_to 'Comment op deze post', new_comment_path(@post)
+br 
+= link_to 'Comment op deze post', [:new, @post, :comment]
 
 = render @post.comments
