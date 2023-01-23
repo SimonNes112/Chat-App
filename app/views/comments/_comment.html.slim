@@ -9,6 +9,6 @@
     br
 
     - if comment.user == @_user
-        = link_to 'Edit', edit_post_comment_path(@post)
-        = link_to 'Destroy', @comment, method: :delete
+        = link_to '', edit_post_comment_path(@post) , class: 'fa-solid fa-pen', id:"comment-up"
+        = link_to '', @comment, method: :delete ,class:"fa-regular fa-trash" , id:"comment-up"
         br

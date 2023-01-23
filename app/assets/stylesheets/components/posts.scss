@@ -21,7 +21,7 @@
 }
 
 .mc-post{
-    color: black;
+    color: white;
     font-size: 20px;
     font-family: 'Minecraftia', sans-serif;
     border: 1px solid white;
@@ -48,6 +48,7 @@
     text-decoration: none;
     margin-right: 10px;
     border: none;
+    color: white;
 }
 .post-form{
     margin-top: 20px;
@@ -74,4 +75,10 @@
     color: white;
     padding: 10px;
     width: 100%;
+}
+#comment-up{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
 }

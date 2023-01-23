@@ -5,10 +5,11 @@
         = simple_format post.content.truncate(27)
         
         .  = post.user.name 
-
-        . = pluralize(post.likes.count, "like")
-        
-        . = pluralize(post.comments.count, "comment")
+        = pluralize(post.likes.count, "") 
+        . class = "fa-solid fa-heart"
+        br
+        = pluralize(post.comments.count, "")
+        . class = "fa-solid fa-comment"
 
     .card-footer
         = link_to 'Bekijk deze post', "/posts/#{post.id}" , class:'card-link'

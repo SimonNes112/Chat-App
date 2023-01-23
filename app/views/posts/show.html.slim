@@ -14,15 +14,13 @@
                 - array += 1
         = "Likes: #{array}"
         - if like = @post.likes.find_by(user_id: session[:user_id])
-                    = button_to '', [@post, like], method: :delete, class: 'fa-solid fa-heart', id:"like-down"
+            = button_to '', [@post, like], method: :delete, class: 'fa-solid fa-heart', id:"like-down"
         - if !@post.likes.find_by(user_id: session[:user_id])
-                    = link_to '', post_likes_path(@post), data: {turbo_method: :post},class: 'fa-regular fa-heart', id:"like-up"
+            = link_to '', post_likes_path(@post), data: {turbo_method: :post},class: 'fa-regular fa-heart', id:"like-up"
     - if @post.user_id == session[:user_id]
-        = link_to 'Edit', edit_post_path(@post)
-        = "|"
-        = link_to "delete", @post, method: :delete
-        br
-    = link_to 'Comment op deze post', [:new, @post, :comment]
+        = link_to '', edit_post_path(@post), class: 'fa-solid fa-pen', id:"comment-up"
+        = link_to "", @post, data: {turbo_method: :delete},class:"fa-regular fa-trash" , id:"comment-up"
+    = link_to '', [:new, @post, :comment],  class: "fa-solid fa-comment" , id:"comment-up"
 
     
 = turbo_stream_from [@post, :comments]
