@@ -13,7 +13,8 @@ html
   body
   .nav
         .nav__right
-            = image_tag "logo/Minecraft-Logo.png", class: "nav__right__logo"
+            = link_to :root do
+                =image_tag("logo/Minecraft-Logo.png", class: "nav__right__logo")
             / = link_to "ChatApp", root_path ,class: "nav__right__brand"
             = link_to "Posts", posts_path ,class: "nav__right__item"
         .nav__left
@@ -22,6 +23,11 @@ html
           -else
             = link_to "Sign up", new_user_path ,class: "nav__left__item" 
             = link_to "Login", new_session_path ,class: "nav__left__item"
+
+
+        
+        - I18n.available_locales.each do |locale|
+          = link_to t("locales.#{locale}"), url_for(locale: locale), class: class_names("nav__left__item", "nav__left__item-active": locale.to_s == @_locale)
 
   .container
       - if flash[:notice] 

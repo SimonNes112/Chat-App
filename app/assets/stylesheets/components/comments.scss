@@ -8,11 +8,11 @@
     color: white;
     font-family: 'Minecraftia', sans-serif;
     font-size: 20px;
+    
 }
 .comment-content{
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 20px;
     margin-right: 20px;
     background-image: url("https://i.ibb.co/rb2TWXL/bgbtn.png");
     border-radius: 20px;
@@ -21,4 +21,10 @@
     font-family: 'Minecraftia', sans-serif;
     font-size: 20px;
     width: 50%;
+    box-shadow: black 0px 0px 20px;
+}
+.comment-user{
+    font-size: 10px;
+    margin-top: 10px;
+    width: 100%;
 }

@@ -10,22 +10,23 @@
     .mc-post-likes
         - array = 0
         - @post.likes.each do |like|
-                
                 - array += 1
         = "Likes: #{array}"
+        br
         - if like = @post.likes.find_by(user_id: session[:user_id])
             = button_to '', [@post, like], method: :delete, class: 'fa-solid fa-heart', id:"like-down"
         - if !@post.likes.find_by(user_id: session[:user_id])
             = link_to '', post_likes_path(@post), data: {turbo_method: :post},class: 'fa-regular fa-heart', id:"like-up"
     - if @post.user_id == session[:user_id]
         = link_to '', edit_post_path(@post), class: 'fa-solid fa-pen', id:"comment-up"
-        = link_to "", @post, data: {turbo_method: :delete},class:"fa-regular fa-trash" , id:"comment-up"
+        = link_to "", [@post], data: {turbo_method: :delete},class:"fa-regular fa-trash" , id:"comment-up"
     = link_to '', [:new, @post, :comment],  class: "fa-solid fa-comment" , id:"comment-up"
 
     
 = turbo_stream_from [@post, :comments]
 .mc-comments
-    h1 Comments:
+
+    h1 = t('posts.show.comments.title')
     
     #comments = render @post.comments
     

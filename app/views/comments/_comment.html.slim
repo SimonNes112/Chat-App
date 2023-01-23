@@ -1,14 +1,13 @@
 .comment-content id=dom_id(comment)
-    big= "comment:"
-    br
     = comment.content.truncate(50)
     br
-    small = "commented by user:"
-    br
-    small = comment.user.name
+    .comment-user
+        small = t('comments.comment.user')
+        br
+        small = comment.user.name
     br
 
     - if comment.user == @_user
-        = link_to '', edit_post_comment_path(@post) , class: 'fa-solid fa-pen', id:"comment-up"
-        = link_to '', @comment, method: :delete ,class:"fa-regular fa-trash" , id:"comment-up"
+        = link_to '', edit_post_comment_path(comment.post) , class: 'fa-solid fa-pen', id:"comment-up"
+        = link_to '', [comment.post, comment], data: {turbo_method: :delete}, class:"fa-regular fa-trash" , id:"comment-up"
         br

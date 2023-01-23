@@ -1,7 +1,7 @@
 .mc-1
-    ="Hier zijn alle posts die zijn gemaakt door de gebruikers"
+    = t(".title")
     br
-    = link_to 'Maak u eigen post', new_post_path
+    = link_to t(".link"), new_post_path
 
 = turbo_frame_tag :posts do
     .row.g-4

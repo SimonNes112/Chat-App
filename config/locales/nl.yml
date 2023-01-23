@@ -1,0 +1,43 @@
+nl:
+  locales:
+    nl: "Nederlands"
+    en: "English"
+
+  actions: &actions
+    show: 
+      button: Bekijk
+    new: 
+      title: Nieuwe 
+      button: Nieuwe
+  posts:
+    show: 
+      button: Bekijk post
+      comments:
+        title: Alle Coments op deze post
+    new: 
+      title: Nieuwe Post
+      button: Nieuwe Post
+    index:
+      title: Hier zijn alle post gemaakt door alle gebruikers
+      link: Maak een post
+    post: 
+      link: Bekijk deze post
+    form:
+      button: Maak Post
+  welcome:
+    index:
+      title: Welcome op dit forum voor Minecraft
+      subtitle: Hier kan je vragen stellen over Minecraft en kan je je eigen posts maken.
+      link1: Posts
+      link2: Nieuw Post
+      link3: Uitloggen
+  comments:
+    form:
+      button: Maak comment
+    comment:
+      user: Commened door user
+
+
+
+
+

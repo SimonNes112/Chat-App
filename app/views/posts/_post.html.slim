@@ -12,5 +12,5 @@
         . class = "fa-solid fa-comment"
 
     .card-footer
-        = link_to 'Bekijk deze post', "/posts/#{post.id}" , class:'card-link'
-/ <a href="/articles/<%= article.id %>">Bekijk deze post</a>
+        = link_to t(".link"), "/posts/#{post.id}" , class:'card-link'
+        

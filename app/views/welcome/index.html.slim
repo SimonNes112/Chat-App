@@ -1,14 +1,16 @@
 .mc
   .mc-logo = image_tag "logo/minecraft-java.webp", class: "mc-image"
 
-  p Welcome op dit forum voor Minecraft
+  = t(".title")
+  br
 
-  p Hier kan je vragen stellen over Minecraft en kan je je eigen posts maken.
+  = t(".subtitle")
+  br
   .mc-menu
     //- Button
-    = link_to "Posts", posts_path, class: 'mc-button'
-    = link_to "New post", new_post_path, class: 'mc-button'
-    = link_to "Logout", logout_path, data: { turbo_method: :delete } ,class: "mc-button"
+    = link_to t(".link1"), posts_path, class: 'mc-button'
+    = link_to t(".link2"), new_post_path, class: 'mc-button'
+    = link_to t(".link3"), logout_path, data: { turbo_method: :delete } ,class: "mc-button"
 / .mc-bottom
 /     .mc-bottom-version
 /       = "Minecraft 1.19.3"
