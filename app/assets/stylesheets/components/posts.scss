@@ -1,0 +1,77 @@
+.card{
+    background-image: url("https://i.ibb.co/rb2TWXL/bgbtn.png");
+    color: white;
+    font-family: 'Minecraftia', sans-serif;
+    border-radius: 20px;
+}
+.card-link{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.mc-1{
+    color: black;
+    font-size: 20px;
+    font-family: 'Minecraftia', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.mc-post{
+    color: black;
+    font-size: 20px;
+    font-family: 'Minecraftia', sans-serif;
+    border: 1px solid white;
+    background-image: url("https://i.ibb.co/rb2TWXL/bgbtn.png");
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+    width: 30%;
+}
+.mc-post-likes{
+}
+
+#like-up{
+
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+#like-down{
+    font-size: 20px;
+    background-image: url("https://i.ibb.co/rb2TWXL/bgbtn.png");
+    text-decoration: none;
+    margin-right: 10px;
+    border: none;
+}
+.post-form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-image: url("https://i.ibb.co/rb2TWXL/bgbtn.png");
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-family: 'Minecraftia', sans-serif;
+    font-size: 20px;
+    width: 50%;
+}
+.post-form-title{
+    font-size: 20px;
+
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+.post-form-content{
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}

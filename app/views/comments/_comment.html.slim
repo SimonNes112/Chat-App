@@ -1,4 +1,14 @@
-p
-= comment.content
-br
-= comment.user.name
+.comment-content id=dom_id(comment)
+    big= "comment:"
+    br
+    = comment.content.truncate(50)
+    br
+    small = "commented by user:"
+    br
+    small = comment.user.name
+    br
+
+    - if comment.user == @_user
+        = link_to 'Edit', edit_post_comment_path(@post)
+        = link_to 'Destroy', @comment, method: :delete
+        br

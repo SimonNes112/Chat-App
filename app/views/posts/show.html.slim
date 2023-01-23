@@ -1,9 +1,33 @@
-h1 = @post.title
+.mc-post
+    .mc-post-title
+        h1 = @post.title
+    .mc-post-content
 
-= @post.content 
+        = @post.content 
 
-= @post.user.name
-br 
-= link_to 'Comment op deze post', [:new, @post, :comment]
+    .mc-post-user
+        = @post.user.name
+    .mc-post-likes
+        - array = 0
+        - @post.likes.each do |like|
+                
+                - array += 1
+        = "Likes: #{array}"
+        - if like = @post.likes.find_by(user_id: session[:user_id])
+                    = button_to '', [@post, like], method: :delete, class: 'fa-solid fa-heart', id:"like-down"
+        - if !@post.likes.find_by(user_id: session[:user_id])
+                    = link_to '', post_likes_path(@post), data: {turbo_method: :post},class: 'fa-regular fa-heart', id:"like-up"
+    - if @post.user_id == session[:user_id]
+        = link_to 'Edit', edit_post_path(@post)
+        = "|"
+        = link_to "delete", @post, method: :delete
+        br
+    = link_to 'Comment op deze post', [:new, @post, :comment]
 
-= render @post.comments
+    
+= turbo_stream_from [@post, :comments]
+.mc-comments
+    h1 Comments:
+    
+    #comments = render @post.comments
+    

@@ -1,4 +1,12 @@
-h1 Bekijk hier alle posts
-= link_to 'Maak u post', new_post_path
+.mc-1
+    ="Hier zijn alle posts die zijn gemaakt door de gebruikers"
+    br
+    = link_to 'Maak u eigen post', new_post_path
 
-= render @posts
+= turbo_frame_tag :posts do
+    .row.g-4
+        - @posts.each do |post|
+            .col-12.col-md-6.col-lg-4.col-xl-3 = render post
+
+= turbo_stream_from :posts
+    = render @posts

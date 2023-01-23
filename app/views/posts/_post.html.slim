@@ -1,9 +1,15 @@
-p
-= post.title
-br
-= post.content
-br
-= post.user.name
+.card.post id=dom_id(post)
+    .card-body
+        h3 = post.title.truncate(12)
+        
+        = simple_format post.content.truncate(27)
+        
+        .  = post.user.name 
 
-= link_to 'Bekijk deze post', "/posts/#{post.id}"
+        . = pluralize(post.likes.count, "like")
+        
+        . = pluralize(post.comments.count, "comment")
+
+    .card-footer
+        = link_to 'Bekijk deze post', "/posts/#{post.id}" , class:'card-link'
 / <a href="/articles/<%= article.id %>">Bekijk deze post</a>

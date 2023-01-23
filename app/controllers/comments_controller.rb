@@ -2,18 +2,17 @@ class CommentsController < ApplicationController
   before_action :set_post
   before_action :set_comment, only: %i[show edit update destroy]
   def index
-    @comments = @post.comments.all
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def create
     @comment = @post.comments.new(comment_params)
+    @comment.user_id = session[:user_id]
     if @comment.save
-      redirect_to '/'
-      raise 'test'
+      redirect_to "/posts/#{params[:post_id]}"
     else
+      raise @comment.errors.inspect
       render :new
-      message = 'Something went wrong. Please try again.'
-      raise 'werk niet meer'
     end
   end
 

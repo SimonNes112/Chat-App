@@ -1,8 +1,12 @@
+  .post-form-title
+    = form.label :title
+    br
+    = form.text_field :title
+  br
+  .post-form-content
+    = form.label :content
+    br
+    = form.text_area :content, cols: 20, rows: 5
+  br
 
-  = form.label :title
-  = form.text_field :title
-  br
-  = form.label :content
-  = form.text_area :content, cols: 30, rows: 10 
-  br
-  = submit_tag "Create Post"
+  = submit_tag "Create Post", class: 'btn btn-primary'

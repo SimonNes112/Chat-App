@@ -1,6 +1,17 @@
-h1 Welcome 
-p This is the home page for the app.
+.mc
+  .mc-logo = image_tag "logo/minecraft-java.webp", class: "mc-image"
 
-- if @_user
-  p You are logged in as #{@_user.email}
-  = link_to 'Bekijk post', posts_path
+  p Welcome op dit forum voor Minecraft
+
+  p Hier kan je vragen stellen over Minecraft en kan je je eigen posts maken.
+  .mc-menu
+    //- Button
+    = link_to "Posts", posts_path, class: 'mc-button'
+    = link_to "New post", new_post_path, class: 'mc-button'
+    = link_to "Logout", logout_path, data: { turbo_method: :delete } ,class: "mc-button"
+/ .mc-bottom
+/     .mc-bottom-version
+/       = "Minecraft 1.19.3"
+/     .mc-bottom-copyright
+/       = "Copyright Mojang AB. Do not distribute."
+    

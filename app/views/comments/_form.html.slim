@@ -1,4 +1,5 @@
-= form.label :content
-= form.text_area :content, cols: 20, rows: 5
+.post-form-content
+    = form.label :content
+    = form.text_area :content, cols: 20, rows: 5
 br
-= form.submit "create comment"
+= form.submit "create comment", class: 'btn btn-primary'
