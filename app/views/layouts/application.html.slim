@@ -25,7 +25,7 @@ html
             = link_to "Login", new_session_path ,class: "nav__left__item"
 
 
-        
+        // this is the language selector
         - I18n.available_locales.each do |locale|
           = link_to t("locales.#{locale}"), url_for(locale: locale), class: class_names("nav__left__item", "nav__left__item-active": locale.to_s == @_locale)
 

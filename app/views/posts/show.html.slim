@@ -22,6 +22,7 @@
         = link_to "", [@post], data: {turbo_method: :delete},class:"fa-regular fa-trash" , id:"comment-up"
     = link_to '', [:new, @post, :comment],  class: "fa-solid fa-comment" , id:"comment-up"
 
+
     
 = turbo_stream_from [@post, :comments]
 .mc-comments
